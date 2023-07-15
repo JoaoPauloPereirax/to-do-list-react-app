@@ -24,7 +24,7 @@ const App = () => {
   return (
     <C.Container>
       <C.Area>
-        <C.Header>To-do List</C.Header>
+        <C.Header>LISTA DE TAREFAS</C.Header>
         <AddArea onEnter={handleAddTask} />
         {list.map((item, index)=>(
           <ListItem key={index} item={item}/>
