@@ -11,11 +11,21 @@ const App = () => {
     {id:1, name:"Ir ao trabalho", done:false}
   ]);
 
+  const handleAddTask = (taskname: string) =>{
+    let newList = [...list];
+    newList.push({
+      id: list.length+1,
+      name: taskname,
+      done: false
+    });
+    setList(newList);
+  }
+
   return (
     <C.Container>
       <C.Area>
         <C.Header>To-do List</C.Header>
-        <AddArea/>
+        <AddArea onEnter={handleAddTask} />
         {list.map((item, index)=>(
           <ListItem key={index} item={item}/>
         ))}
